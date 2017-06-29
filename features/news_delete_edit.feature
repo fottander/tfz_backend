@@ -20,3 +20,4 @@ Feature: Delete and edit a news post
     Then I should see "Awesome travel insights"
     And I click "Edit post"
     Then I should see "Edit your news post"
+    And I should see "Awesome travel insights"
