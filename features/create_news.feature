@@ -1,10 +1,18 @@
 Feature: Create news
-  As a visitor
+  As an admin
   In order to update visitors with interesting news
   I would like to be able to create news articles
 
+  Background:
+    Given the following news exist
+     | title                   | content                                           | file               |
+     | Awesome travel insights | Let me tell you about my trip to British Columbia | Agile_workflow.png |
+
   Scenario: I create a news article
     Given I am on the news page
+    Then I should see "Awesome travel insights"
+    And I should see "Let me tell you about my trip to British Columbia"
+    And I should see "Awesome travel insights" file name "Agile_workflow.png"
     And I click "Create news article"
     Then I should see "Create a new article"
     And I fill in "Title" with "Scooby doo"
