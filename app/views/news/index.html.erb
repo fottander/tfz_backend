@@ -1,5 +1,6 @@
 <div id='news'>
   <h1 class='titles'>NEWS</h1>
+  <%= link_to 'Create news article', new_news_path, class: 'button inc' %>
     <% @news.each do |news| %>
       <div class='row'>
         <div class="news-<%= news.id %>">
@@ -16,6 +17,6 @@
           </div>
         </div>
       </div>
+      <%= link_to 'Delete post', news_path(news), method: :delete, class: 'button tiny alert' %>
     <% end %>
-  <%= link_to 'Create news article', new_news_path, class: 'button inc' %>
 </div>

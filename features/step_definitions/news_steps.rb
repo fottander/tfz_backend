@@ -22,3 +22,7 @@ Then(/^I should see "([^"]*)" file name "([^"]*)"$/) do |news_title, file_name|
     end
   end
 end
+
+Then(/^I should not see "([^"]*)"$/) do |content|
+  expect(page).not_to have_content content
+end
