@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'ruby_dep', '~> 1.3.1'
 gem 'paperclip', '~> 5.0.0'
 gem 'foundation-rails'
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'pry-byebug'
