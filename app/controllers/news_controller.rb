@@ -27,6 +27,11 @@ class NewsController < ApplicationController
     end
   end
 
+  def edit
+    @news = News.find(params[:id])
+  end
+
+
   private
 
   def news_params
