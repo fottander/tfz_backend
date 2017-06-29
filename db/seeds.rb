@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+News.delete_all
+
+News.create(
+  title: "Awesome travel insights",
+  content: "Let me tell you about my trip to British Columbia",
+  file: File.new("#{Rails.root}/spec/images/Agile_workflow.png")
+  )
+
+News.create(
+  title: "Great skiing in Aspen",
+  content: "Let me tell you about my trip to Aspen",
+  file: File.new("#{Rails.root}/spec/images/Agile_workflow.png")
+  )
+
+News.create(
+  title: "Follow John to the best place in Europe",
+  content: "Europe is now better than ever",
+  file: File.new("#{Rails.root}/spec/images/Agile_workflow.png")
+  )
+
+puts "Created #{News.count} news"

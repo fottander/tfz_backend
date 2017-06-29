@@ -1,0 +1,21 @@
+<div id='news'>
+  <h1 class='titles'>NEWS</h1>
+    <% @news.each do |news| %>
+      <div class='row'>
+        <div class="news-<%= news.id %>">
+          <div class='large-6 columns'>
+            <div class='news-image'>
+              <%= image_tag news.file.url, style: 'width: 300px; height: auto' %>
+            </div>
+          </div>
+          <div class='news-title'>
+            <%= link_to news.title, news_path(news)%>
+          </div>
+          <div class='news-content'>
+            <%= news.content %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <%= link_to 'Create news article', new_news_path, class: 'button inc' %>
+</div>
