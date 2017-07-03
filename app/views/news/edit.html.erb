@@ -1,0 +1,11 @@
+<h2>Edit your news post</h2>
+<p>Now editing: <%= @news.title %></p>
+<%= form_for @news do |f| %>
+  <%= f.label :title, 'Title' %>
+  <%= f.text_field :title, value: @news.title %>
+  <%= f.label :content, 'Content' %>
+  <%= f.text_area :content, value: @news.content %>
+  <%= f.label :file %>
+  <%= f.file_field :file, value: @news.file %>
+  <%= f.submit 'Submit', class: 'button inc' %>
+<% end %>

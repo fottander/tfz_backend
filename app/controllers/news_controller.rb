@@ -19,6 +19,26 @@ class NewsController < ApplicationController
     end
   end
 
+  def destroy
+    @news = News.find(params[:id])
+    if @news.destroy
+      flash[:notice] = 'News post deleted'
+      redirect_back(fallback_location: news_path)
+    end
+  end
+
+  def edit
+    @news = News.find(params[:id])
+  end
+
+  def update
+    @news = News.find(params[:id])
+    if @news.update news_params
+      flash[:notice] = 'News post updated'
+      redirect_back(fallback_location: news_path)
+    end
+  end
+
   private
 
   def news_params

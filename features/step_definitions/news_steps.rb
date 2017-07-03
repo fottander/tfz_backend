@@ -6,6 +6,10 @@ Then(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, content|
   fill_in field, with: content
 end
 
+Then(/^I attach file$/) do
+  attach_file('news[file]', "#{Rails.root}/spec/images/Agile_workflow.png", visible: false)
+end
+
 Given(/^the following news exist$/) do |table|
   table.hashes.each do |attr|
    create(:news,
@@ -21,4 +25,8 @@ Then(/^I should see "([^"]*)" file name "([^"]*)"$/) do |news_title, file_name|
       expect(page).to have_css "img[src*='#{news.file.url}']"
     end
   end
+end
+
+Then(/^I should not see "([^"]*)"$/) do |content|
+  expect(page).not_to have_content content
 end
