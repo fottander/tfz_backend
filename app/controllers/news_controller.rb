@@ -39,7 +39,6 @@ class NewsController < ApplicationController
     end
   end
 
-
   private
 
   def news_params

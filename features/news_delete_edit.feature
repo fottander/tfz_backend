@@ -25,5 +25,6 @@ Feature: Delete and edit a news post
     And I fill in "Content" with "This article is about scooby doo"
     And I attach file
     And I click "Submit"
+    Then I should see "News post updated"
     Given I am on the news page
     Then I should see "Scooby doo"
