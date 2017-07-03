@@ -21,3 +21,9 @@ Feature: Delete and edit a news post
     And I click "Edit post"
     Then I should see "Edit your news post"
     And I should see "Awesome travel insights"
+    And I fill in "Title" with "Scooby doo"
+    And I fill in "Content" with "This article is about scooby doo"
+    And I attach file
+    And I click "Submit"
+    Given I am on the news page
+    Then I should see "Scooby doo"

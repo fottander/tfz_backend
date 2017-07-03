@@ -31,6 +31,14 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
   end
 
+  def update
+    @news = News.find(params[:id])
+    if @news.update news_params
+      flash[:notice] = 'News post updated'
+      redirect_back(fallback_location: news_path)
+    end
+  end
+
 
   private
 
