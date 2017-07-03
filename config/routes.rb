@@ -1,16 +1,7 @@
 Rails.application.routes.draw do
 
- devise_for :users, controller: {
-    sessions: 'sessions'
-}
-devise_scope :user do
-  authenticated :user do
-    root to: 'index#index'
-  end
-  unauthenticated :user do
-    root to: 'devise/sessions#new', as: :unauthenticated_root
-  end
-end
+  devise_for :users
+  root controller: :index, action: :index
 
  resources :news, only: [:index, :show, :new, :create, :destroy, :update, :edit]
 
