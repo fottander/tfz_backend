@@ -4,11 +4,15 @@ Feature: Delete and edit a news post
   I would like to be able to delete and edit news posts
 
   Background:
-    Given the following news exist
-     | title                   | content                                           | file               |
-     | Awesome travel insights | Let me tell you about my trip to British Columbia | Agile_workflow.png |
+  Given the following users exist
+    | email         | password  | role  |
+    | felix@tfz.com | 12345678  | admin |
+  Given the following news exist
+   | title                   | content                                           | file               |
+   | Awesome travel insights | Let me tell you about my trip to British Columbia | Agile_workflow.png |
 
   Scenario: I delete a news post
+    Given I am logged in as "felix@tfz.com"
     Given I am on the news page
     Then I should see "Awesome travel insights"
     And I click "Delete post"
@@ -16,6 +20,7 @@ Feature: Delete and edit a news post
     Then I should not see "Awesome travel insights"
 
   Scenario: I edit a news post
+    Given I am logged in as "felix@tfz.com"
     Given I am on the news page
     Then I should see "Awesome travel insights"
     And I click "Edit post"
