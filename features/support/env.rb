@@ -16,3 +16,10 @@ include FactoryGirl::Syntax::Methods
 Before do
   Aws.config[:s3] = {stub_responses: true}
 end
+
+After do
+  Warden.test_reset!
+end
+
+Warden.test_mode!
+World Warden::Test::Helpers

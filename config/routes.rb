@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
- root controller: :index, action: :index
+  devise_for :users
+  root controller: :index, action: :index
 
  resources :news, only: [:index, :show, :new, :create, :destroy, :update, :edit]
 

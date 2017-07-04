@@ -1,4 +1,5 @@
 News.delete_all
+User.delete_all
 
 News.create(
   title: "Awesome travel insights",
@@ -18,4 +19,10 @@ News.create(
   file: File.new("#{Rails.root}/spec/images/Agile_workflow.png")
   )
 
+User.create(
+  email: "felix@tfz.com",
+  password: "12345678",
+  )
+
 puts "Created #{News.count} news"
+puts "Created #{User.count} user"
