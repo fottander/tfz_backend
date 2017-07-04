@@ -14,3 +14,10 @@ Feature: Admin login
     And I fill in "Password" with "12345678"
     And I click "Log in"
     Then "felix@tfz.com" should be marked as "admin"
+
+  Scenario: I login with wrong password
+    Given I am on the root page
+    And I fill in "Email" with "felix@tfz.com"
+    And I fill in "Password" with "123n4j33"
+    And I click "Log in"
+    Then I should see "Invalid Email or password"
