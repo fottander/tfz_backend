@@ -13,6 +13,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'foundation-rails'
 gem 'aws-sdk'
 gem 'devise'
+gem 'rack-cors', require: 'rack/cors'
 
 group :development, :test do
   gem 'pry-byebug'
