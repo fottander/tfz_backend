@@ -8,10 +8,7 @@ Given(/^I am on the root page$/) do
   visit root_path
 end
 
-Given(/^I select "([^"]*)" from "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^"([^"]*)" should be marked as "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^"([^"]*)" should be marked as "([^"]*)"$/) do |email, option|
+  user = User.find_by(email: email)
+  expect(user.role).to eq option
 end

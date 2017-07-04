@@ -12,6 +12,5 @@ Feature: Admin login
     Given I am on the root page
     And I fill in "Email" with "felix@tfz.com"
     And I fill in "Password" with "12345678"
-    And I click "Sign up"
-    And I should see "You have signed up successfully."
-    Then "felix@tfz" should be marked as "admin"
+    And I click "Log in"
+    Then "felix@tfz.com" should be marked as "admin"
