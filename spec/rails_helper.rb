@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Paperclip::Shoulda::Matchers
   config.include ResponseJSON, type: :request
+  config.include DeviseRequestSpecHelpers, type: :request
 
   config.before(:each) do
     Aws.config[:s3] = {stub_responses: true}
