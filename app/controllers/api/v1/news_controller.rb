@@ -1,4 +1,4 @@
-class Api::V1::NewsController < ApplicationController
+class Api::V1::NewsController < ApiController
   def index
     @news = News.all
   end
