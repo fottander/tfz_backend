@@ -11,14 +11,14 @@ Feature: Create news
    | title                   | content                                           | file               |
    | Awesome travel insights | Let me tell you about my trip to British Columbia | Agile_workflow.png |
 
-  Scenario: I create a news article
+  Scenario: I create a news post
     Given I am logged in as "felix@tfz.com"
     Given I am on the news page
     Then I should see "Awesome travel insights"
     And I should see "Let me tell you about my trip to British Columbia"
     And I should see "Awesome travel insights" file name "Agile_workflow.png"
     And I click "Create news article"
-    Then I should see "Create a new article"
+    Then I should see "Create news post"
     And I fill in "Title" with "Scooby doo"
     And I fill in "Content" with "This article is about scooby doo"
     And I attach file
