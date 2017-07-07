@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'aws-sdk'
 gem 'devise'
 gem 'rack-cors', require: 'rack/cors'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'pry-byebug'
