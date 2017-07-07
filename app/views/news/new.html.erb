@@ -1,8 +1,8 @@
-<h3>Create a new article</h3>
+<h3>Create news post</h3>
 <%= form_for @news do |f| %>
-<%= f.label :title, 'News title' %>
+<%= f.label :title, 'Title' %>
 <%= f.text_field :title %>
-<%= f.label  :content, 'News content' %>
+<%= f.label  :content, 'Content' %>
 <%= f.cktext_area :content, class: 'ckeditor' %>
 <%= f.label :file %>
 <%= f.file_field :file %>
