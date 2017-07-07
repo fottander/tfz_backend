@@ -2,8 +2,10 @@
 <%= form_for @news do |f| %>
 <%= f.label :title, 'Title' %>
 <%= f.text_field :title %>
-<%= f.label  :content, 'Content' %>
-<%= f.cktext_area :content, class: 'ckeditor' %>
+<div class='ckeditor'>
+  <%= f.label  :content, 'Content' %>
+  <%= f.cktext_area :content, class: 'ckeditor' %>
+</div>
 <%= f.label :file %>
 <%= f.file_field :file %>
 <%= f.submit 'Submit', class: 'button inc' %>
