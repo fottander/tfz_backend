@@ -21,6 +21,8 @@ module TfzBackend
       generate.routing_specs false
       generate.controller_specs false
     end
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* )
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
