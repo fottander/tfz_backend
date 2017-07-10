@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  
+
   devise_for :users
   root controller: :index, action: :index
 
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
  namespace :api do
    namespace :v1 do
-     resources :news, only: [:index], defaults: { format: 'json'}
+     resources :news, only: [:new, :create, :index, :edit, :update, :destroy], defaults: { format: 'json'}
    end
  end
 end
