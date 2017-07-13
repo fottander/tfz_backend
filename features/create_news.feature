@@ -27,3 +27,6 @@ Feature: Create news
     Then I should see "News article created!"
     Given I am on the news page
     Then I should see "Scooby doo" file name "Agile_workflow.png"
+    And I click "Scooby doo"
+    Then I should see "Baseball"
+    And I should see "Soccer"

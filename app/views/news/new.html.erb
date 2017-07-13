@@ -6,6 +6,8 @@
   <%= f.label  :content, 'Content' %>
   <%= f.cktext_area :content, class: 'ckeditor' %>
 </div>
+<%= f.label  :tag_list, 'Tags' %>
+<%= f.text_area :tag_list %>
 <%= f.label :file %>
 <%= f.file_field :file %>
 <%= f.submit 'Submit', class: 'button inc' %>
