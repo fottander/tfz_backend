@@ -1,4 +1,6 @@
 class News < ApplicationRecord
+  acts_as_taggable
+  
   has_attached_file :file,
                       storage: :s3,
                       s3_credentials: Proc.new{|a| a.instance.s3_credentials }

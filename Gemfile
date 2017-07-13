@@ -15,6 +15,7 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'rack-cors', require: 'rack/cors'
 gem 'ckeditor'
+gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 
 group :development, :test do
   gem 'pry-byebug'
