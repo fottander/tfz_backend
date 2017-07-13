@@ -21,6 +21,7 @@ Feature: Create news
     Then I should see "Create news post"
     And I fill in "Title" with "Scooby doo"
     And I fill in "Content" with "This article is about scooby doo"
+    And I fill in "Tags" with "Baseball, Soccer"
     And I attach file
     And I click "Submit"
     Then I should see "News article created!"
