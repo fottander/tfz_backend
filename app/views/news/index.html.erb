@@ -16,7 +16,7 @@
             <%= news.content.html_safe %>
           </div>
           <div>
-            <%= news.tag_list %>
+            <%= raw news.tags.map { |t| link_to t.name, news_path(tag: t.name) }.join(', ') %>
           </div>
         </div>
       </div>

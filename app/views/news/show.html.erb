@@ -6,5 +6,5 @@
 </div>
 <div class='article-content'>
   <p><%= @news.content.html_safe %></p>
-  <%= raw @news.tags.map { |t| link_to t.name, news_path(tag: t.name) }.join(', ') %>
+  <%= @news.tag_list %>
 </div>
