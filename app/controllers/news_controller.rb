@@ -1,6 +1,10 @@
 class NewsController < ApplicationController
   def index
-    @news = News.all.order(created_at: :desc)
+    if params[:tag]
+    @news = News.all.order(created_at: :desc).tagged_with(params[:tag])
+    else
+      @news = News.all.order(created_at: :desc)
+    end
   end
 
   def show
@@ -42,6 +46,6 @@ class NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news).permit(:title, :content, :file)
+    params.require(:news).permit(:title, :content, :file, :all_tags)
   end
 end

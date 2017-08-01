@@ -21,8 +21,10 @@ Feature: Create news
     Then I should see "Create news post"
     And I fill in "Title" with "Scooby doo"
     And I fill in "Content" with "This article is about scooby doo"
+    And I fill in "Tags" with "Cartoons"
     And I attach file
     And I click "Submit"
     Then I should see "News article created!"
     Given I am on the news page
     Then I should see "Scooby doo" file name "Agile_workflow.png"
+    And I should see "Cartoons"

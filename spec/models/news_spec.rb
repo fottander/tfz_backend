@@ -15,6 +15,11 @@ RSpec.describe News, type: :model do
     it { is_expected.to have_attached_file(:file)}
   end
 
+  describe 'Associations' do
+    it { is_expected.to have_many :taggings }
+    it { is_expected.to have_many :tags }
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
       expect(create(:news)).to be_valid
