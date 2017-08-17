@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::NewsController, type: :request do
-  let!(:news) { create(:news, title: 'My trip to Aspen', content: 'Aspen is great') }
+  let!(:news) { create(:news, title: 'My trip to Aspen', content: 'Aspen is great', all_tags: 'aspen') }
 
   describe 'sessions' do
     it 'signs in user' do
@@ -15,7 +15,7 @@ RSpec.describe Api::V1::NewsController, type: :request do
       get '/api/v1/news'
 
       expected_response = [{
-        'id' => news.id, 'title' => 'My trip to Aspen', 'content' => 'Aspen is great'
+        'id' => news.id, 'title' => 'My trip to Aspen', 'content' => 'Aspen is great', 'all_tags' => 'aspen'
       }]
 
       expect(response_json).to eq expected_response
@@ -28,7 +28,7 @@ RSpec.describe Api::V1::NewsController, type: :request do
       get "/api/v1/news/#{news.id}"
 
       expected_response = {
-        'id' => news.id, 'title' => 'My trip to Aspen', 'content' => 'Aspen is great'
+        'id' => news.id, 'title' => 'My trip to Aspen', 'content' => 'Aspen is great', 'all_tags' => 'aspen'
       }
 
       expect(response_json).to eq expected_response
