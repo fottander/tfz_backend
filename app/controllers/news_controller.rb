@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
   def index
     if params[:tag]
-    @news = News.all.order(created_at: :desc).tagged_with(params[:tag]).order(created_at: :desc)
+      @news = News.all.order(created_at: :desc).tagged_with(params[:tag]).order(created_at: :desc)
     else
       @news = News.all.order(created_at: :desc)
     end
