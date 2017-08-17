@@ -15,6 +15,9 @@
           <div class='news-content'>
             <%= news.content.html_safe %>
           </div>
+          <div>
+            <%= raw tag_links(news.all_tags) %>
+          </div>
         </div>
       </div>
       <%= link_to 'Delete post', news_path(news), method: :delete, class: 'button tiny alert' %>
