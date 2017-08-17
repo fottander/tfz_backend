@@ -7,3 +7,6 @@
 <div class='article-content'>
   <p><%= @news.content.html_safe %></p>
 </div>
+<div class='article-content'>
+  <%= raw tag_links(@news.all_tags) %>
+</div>
