@@ -1,6 +1,10 @@
 class Api::V1::NewsController < ApiController
   def index
-    @news = News.all.order(created_at: :desc)
+    if params[:tag]
+      @news = News.all.order(created_at: :desc).tagged_with(params[:tag]).order(created_at: :desc)
+    else
+      @news = News.all.order(created_at: :desc)
+    end
   end
 
   def show
