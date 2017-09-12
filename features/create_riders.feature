@@ -8,12 +8,12 @@ Feature: Create riders
       | email         | password  | role  |
       | felix@tfz.com | 12345678  | admin |
     Given the following riders exist
-      | name  | youtube | vimeo           |
-      | Felix | UU2323H | vimeo.com/felix |
+      | name  | ytlink  | vimeolink           |
+      | Felix | UU2323H | vimeo.com/felix     |
 
   Scenario: I create a rider page
     Given I am logged in as "felix@tfz.com"
-    Given I am on the pros page
+    Given I am on the riders page
     Then I should see "Rider index"
     Then I should see "Felix"
     Then I should see "UU2323H"
