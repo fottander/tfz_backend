@@ -1,6 +1,13 @@
 <h2>Rider index</h2>
-<% @riders.each do |rider| %>
-  <%= rider.name %>
-  <%= rider.ytlink %>
-  <%= rider.vimeolink %>
+<%= link_to 'Add rider', new_rider_path, class: 'button inc' %>
+<% @rider.each do |rider| %>
+  <div class='rider-name'>
+    <p>NAME: <%= rider.name %> </p>
+  </div>
+  <div>
+    <p>YOUTUBE LINK: <%= rider.ytlink %></p>
+  </div>
+  <div>
+    <p>VIMEO LINK: <%= rider.vimeolink %></p>
+  </div>
 <% end %>
