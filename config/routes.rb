@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
  resources :news, only: [:index, :show, :new, :create, :destroy, :update, :edit]
 
+ resources :riders, only: [:index, :new, :create, :destroy, :update, :edit]
+
  get 'tags/:tag', to: 'news#index', as: "tag"
 
  namespace :api do
