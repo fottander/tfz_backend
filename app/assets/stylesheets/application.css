@@ -19,6 +19,11 @@
    width: 360px;
  }
 
+ .rider-name {
+   font-family: 'Montserrat', sans-serif;
+   color: #23c1a0;
+ }
+
   .news-image {
     padding-top: 20px;
     padding-bottom: 20px;

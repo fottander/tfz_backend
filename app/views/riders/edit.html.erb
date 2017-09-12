@@ -1,0 +1,11 @@
+<h2>Edit your Rider</h2>
+<p>Now editing: <%= @rider.name %></p>
+<%= form_for @rider do |f| %>
+<%= f.label :name, 'Name' %>
+<%= f.text_field :name, value: @rider.name %>
+<%= f.label :ytlink, 'Youtube link' %>
+<%= f.text_field :ytlink, value: @rider.ytlink %>
+<%= f.label :vimeolink, 'Vimeo link' %>
+<%= f.text_field :vimeolink, value: @rider.vimeolink %>
+<%= f.submit 'Submit', class: 'button inc' %>
+<% end %>

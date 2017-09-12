@@ -1,0 +1,15 @@
+<h2>Rider index</h2>
+<%= link_to 'Add rider', new_rider_path, class: 'button inc' %>
+<% @rider.each do |rider| %>
+  <div class='rider-name'>
+    <p>NAME: <%= rider.name %> </p>
+  </div>
+  <div>
+    <p>YOUTUBE LINK: <%= rider.ytlink %></p>
+  </div>
+  <div>
+    <p>VIMEO LINK: <%= rider.vimeolink %></p>
+  </div>
+  <%= link_to 'Delete rider', rider_path(rider), method: :delete, class: 'button tiny alert' %>
+  <%= link_to 'Edit rider', edit_rider_path(rider), class: 'button tiny default' %>
+<% end %>

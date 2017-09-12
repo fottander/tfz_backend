@@ -1,0 +1,10 @@
+<h2>Add information about the rider</h2>
+<%= form_for @rider do |f| %>
+<%= f.label :name, 'Name' %>
+<%= f.text_field :name %>
+<%= f.label :ytlink, 'Youtube link' %>
+<%= f.text_field :ytlink %>
+<%= f.label :vimeolink, 'Vimeo link' %>
+<%= f.text_field :vimeolink %>
+<%= f.submit 'Submit', class: 'buttin inc' %>
+<% end %>
