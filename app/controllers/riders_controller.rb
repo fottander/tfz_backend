@@ -15,6 +15,18 @@ class RidersController < ApplicationController
     end
   end
 
+  def edit
+    @rider = Rider.find(params[:id])
+  end
+
+  def destroy
+    @rider = Rider.find(params[:id])
+    if @rider.destroy
+      flash[:notice] = 'Rider deleted'
+      redirect_back(fallback_location: riders_path)
+    end
+  end
+
   private
 
   def rider_params

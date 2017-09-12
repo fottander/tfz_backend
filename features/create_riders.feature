@@ -29,3 +29,26 @@ Feature: Create riders
     Then I should see "Fisken"
     And I should see "UU3434"
     And I should see "vimeo.com/fisken"
+
+  Scenario: I delete a rider
+    Given I am logged in as "felix@tfz.com"
+    Given I am on the riders page
+    Then I should see "Felix"
+    And I click "Delete rider"
+    And I should see "Rider deleted"
+    Then I should not see "Felix"
+
+  Scenario: I edit a news post
+    Given I am logged in as "felix@tfz.com"
+    Given I am on the riders page
+    Then I should see "Felix"
+    And I click "Edit rider"
+    Then I should see "Edit your Rider"
+    And I should see "Felix"
+    And I fill in "Name" with "Scooby"
+    And I fill in "Youtube link" with "UU3434"
+    And I fill in "Vimeo link" with "vimeo.com/scooby"
+    And I click "Submit"
+    Then I should see "Rider updated"
+    Given I am on the riders page
+    Then I should see "Scooby"
