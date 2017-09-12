@@ -27,6 +27,14 @@ class RidersController < ApplicationController
     end
   end
 
+  def update
+    @rider = Rider.find(params[:id])
+    if @rider.update rider_params
+      flash[:notice] = 'Rider updated'
+      redirect_back(fallback_location: edit_rider_path)
+    end
+  end
+
   private
 
   def rider_params
