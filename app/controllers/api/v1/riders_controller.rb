@@ -1,6 +1,6 @@
 class Api::V1::RidersController < ApiController
   def index
-    @rider = Rider.all.order(created_at: :desc)
+    @riders = Rider.all.order(created_at: :desc)
   end
 
   def show

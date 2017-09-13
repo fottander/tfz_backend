@@ -1,6 +1,6 @@
 <h2>Rider index</h2>
 <%= link_to 'Add rider', new_rider_path, class: 'button inc' %>
-<% @rider.each do |rider| %>
+<% @riders.each do |rider| %>
   <div class='rider-name'>
     <p>NAME: <%= rider.name %> </p>
   </div>
