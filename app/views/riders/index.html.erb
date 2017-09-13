@@ -1,4 +1,8 @@
 <h3>RIDER INDEX</h3>
+<%= form_tag(riders_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 <%= link_to 'Add rider', new_rider_path, class: 'button inc' %>
 <% @riders.each do |rider| %>
   <div class='rider-name'>

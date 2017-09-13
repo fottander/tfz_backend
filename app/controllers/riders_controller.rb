@@ -1,6 +1,6 @@
 class RidersController < ApplicationController
   def index
-    @riders = Rider.all.order(created_at: :desc)
+    @riders = Rider.search(params[:term])
   end
 
   def new
@@ -38,6 +38,6 @@ class RidersController < ApplicationController
   private
 
   def rider_params
-    params.require(:rider).permit(:name, :ytlink, :vimeolink)
+    params.require(:rider).permit(:name, :ytlink, :vimeolink, :term)
   end
 end
