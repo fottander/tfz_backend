@@ -1,6 +1,6 @@
 class RidersController < ApplicationController
   def index
-    @riders = Rider.all.order(created_at: :desc)
+    @riders = Rider.all.order(name: :asc)
   end
 
   def new
