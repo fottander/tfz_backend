@@ -14,7 +14,7 @@ Feature: Create riders
   Scenario: I create a rider page
     Given I am logged in as "felix@tfz.com"
     Given I am on the riders page
-    Then I should see "Rider index"
+    Then I should see "RIDER INDEX"
     Then I should see "Felix"
     Then I should see "UU2323H"
     Then I should see "vimeo.com/felix"
